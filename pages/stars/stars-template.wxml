@@ -1,0 +1,18 @@
+<template name="starsTemplate">
+  <view class="verify">
+    <text class="verify-text">服务评价：</text>
+    <view class='stars'>
+      <image src='/images/icons/star.png'></image>
+      <image src='/images/icons/star.png'></image>
+      <image src='/images/icons/star.png'></image>
+      <image src='/images/icons/star.png'></image>
+      <image src='/images/icons/star.png'></image>
+    </view>
+  </view>
+
+  <view class="word-container">
+    <text>留言:</text>
+    <text class="word">十分感谢！</text>
+  </view>
+
+</template>

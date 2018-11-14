@@ -1,0 +1,35 @@
+.verify {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40rpx;
+}
+
+.verify-text {
+  color: #73b3d5;
+}
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  margin-right: 24rpx;
+}
+
+.stars image {
+  margin-right: 20rpx;
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.star-score {
+  color: #1f3463;
+}
+
+.word-container {
+  color: grey;
+  margin-top: 30rpx;
+  font-size: 16px;
+}
+
+.word {
+  margin-left: 20rpx;
+}

@@ -1,0 +1,45 @@
+<!-- image 要到Picker里面 -->
+<view class='box'>
+  <form bindsubmit='onSubmitTap'>
+    <!-- 联系方式 -->
+    <view class='contacts box-v'>
+      <view class='single'>
+        <text>姓名:</text>
+        <input name='name' value='{{name}}' class='input' type='text' placeholder='请填写姓名' />
+      </view>
+      <view class='single'>
+        <text>住址:</text>
+        <input name="room" value='{{room}}' class='input' type='text' placeholder='请填写楼栋和房间号' />
+      </view>
+      <view class='single'>
+        <text>手机:</text>
+        <input name="phone" bindinput='onPhoneInput' value='{{phone}}' class='input' type='text' placeholder='请填写手机号' />
+      </view>
+    </view>
+
+    <!-- 义诊类别 -->
+    <view class='category box-v'>
+      <picker name="category_id" bindchange="onPickerChange"  value="{{category[index].id}}" range-key='name' range="{{category}}">
+        <view class='picker'>
+          <view>
+            义诊类别：{{category[index].name}}
+          </view>
+          <image class='arrow' src='/images/icons/arrow.png'></image>
+        </view>
+
+      </picker>
+    </view>
+
+    <!-- 细节详情 -->
+    <view class='detail box-v'>
+      <textarea name='description' bindinput='onDescription' value='{{description}}' class='detail_input'
+       placeholder='请在此处简要说明电脑问题，不超过200个字哦' maxlength='200' />
+    </view>
+
+    <!-- 提交按钮 -->
+    <button  class='main-btn' form-type='submit' style="margin-top:150rpx">
+      提交
+    </button>
+
+  </form>
+</view>

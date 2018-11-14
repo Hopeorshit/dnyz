@@ -1,0 +1,23 @@
+<import src="../stars/stars-template.wxml" />
+<view>
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <view class='singleorder'>
+      <view class="callNumber">
+        <text>手机号：{{item.order.phone}}</text>
+         <wz-call phone='{{item.order.phone}}'></wz-call>
+      </view>
+      <view class='myOrderText'>
+        <text>姓名：{{item.order.name}}</text>
+        <text>住处：{{item.order.room}}</text>
+        <text>时间：{{item.order.created}}</text>
+        <text>类别：{{item.order.category_name}}</text>
+        <text>备注：{{item.order.description?item.order.description:'无'}}</text>
+      </view>
+      <view class='orderstatus' wx:if="{{item.order.status==1}}">
+        <text class="mark">待评价</text>
+        <text class="tip">(对方评价之后，才能计入志愿者工时系统)</text>
+      </view>
+      <template is="starsTemplate" wx:if="{{item.order.status==2}}" />
+    </view>
+  </block>
+</view>

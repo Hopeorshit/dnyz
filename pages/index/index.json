@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "电脑义诊",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "wz-call": "/components/call"
+  }
+}

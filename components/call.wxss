@@ -1,0 +1,5 @@
+/* components/call.wxss */
+.call{
+  width: 50rpx;
+  height: 50rpx;
+}

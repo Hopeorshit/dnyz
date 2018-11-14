@@ -1,0 +1,27 @@
+/**app.wxss**/
+
+page {
+  background-color: #efefef;
+  font-size: 15px;
+  color: #333;
+}
+
+.main-btn {
+  background-color: #73b3d5;
+  border-radius: 50rpx;
+  box-shadow: 3px 3px 5px #cecece;
+  font-size: 23px;
+  color: white;
+  letter-spacing: 2px;
+  line-height: 50px;
+  margin: 20rpx 120rpx;
+}
+
+.small-btn {
+  background-color: #73b3d5;
+  padding: 0rpx 40rpx;
+  border-radius: 50rpx;
+  font-size: 16px;
+  line-height: 32px;
+  color: white;
+}

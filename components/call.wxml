@@ -1,0 +1,2 @@
+<!--components/call.wxml-->
+<image bindtap='onCallTap' class='call' src='./images/phone.png'></image>

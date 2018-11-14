@@ -1,0 +1,23 @@
+.box {
+  margin-top: 100rpx;
+  padding:0 20rpx;
+}
+
+.box-v {
+  display: flex;
+  align-items: center;
+  margin: 30rpx 0;
+  padding: 20rpx 10rpx;
+  background-color: white;
+  border-radius: 10rpx;
+}
+
+.box-v image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.box-v input {
+  margin-left: 20rpx;
+  flex: 1;
+}

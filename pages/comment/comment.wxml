@@ -1,0 +1,45 @@
+<view class="container">
+
+  <!-- 志愿者信息 -->
+  <view class="box1 box">
+    <text class='box1-t'>志愿者信息</text>
+    <view class='box1-v1'>
+      <text>姓名：</text>
+      <text class='name'>{{vol.name}}</text>
+    </view>
+    <view class="box1-v2">
+      <view>
+        <text>手机：</text>
+        <text>{{vol.phone}}</text>
+      </view>
+     <wz-call phone='{{vol.phone}}'></wz-call>
+    </view>
+  </view>
+  <form bindsubmit='onSubmitTap'>
+    <!-- 评价 -->
+    <view class="box2 box">
+      <text class='box2-t'>评价</text>
+      <!-- 评星 -->
+      <view class="box2-star">
+        <block wx:for="{{Score}}" wx:key="index">
+          <image class='star' catchtap='onScoreTap' id='{{index+1}}' data-score='fullStar' src='../../images/icons/star_full.png'>
+          </image>
+        </block>
+        <block wx:for="{{noScore}}" wx:key="index">
+          <image class='star' catchtap='onScoreTap' id='{{index+1}}' data-score='noStar' src='../../images/icons/star.png'>
+          </image>
+        </block>
+      </view>
+      <view>
+        <textarea name='detail' bindinput='onDetailInput' value='{{detail}}' placeholder='留言（200字以内） ' placeholder-style='font-size:16px '></textarea>
+      </view>
+      <!-- 提交 -->
+      <view class="submit">
+        <!-- <text>提交</text> -->
+        <button form-type='submit' class='main-btn' style='margin-top:80rpx;'>提交</button>
+      </view>
+
+    </view>
+  </form>
+
+</view>

@@ -1,0 +1,52 @@
+.box {
+  background: white;
+  padding: 30rpx;
+  margin: 0 20rpx;
+}
+
+.box1 {
+  margin-top: 100rpx;
+}
+
+.box1-t {
+  font-weight: bold;
+}
+
+.box1-v1 {
+  margin: 10rpx 0;
+  display: flex;
+}
+
+.box1-v2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box1-v2 image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.box2 {
+  margin-top: 20rpx;
+}
+
+.box2-t{
+  font-weight: bolder;
+}
+
+.box2-star{
+  margin: 20rpx 0;
+}
+
+.star {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 30rpx;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #cecece;
+}

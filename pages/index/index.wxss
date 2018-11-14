@@ -1,0 +1,96 @@
+.banner {
+  position: relative;
+}
+
+.bannerImg {
+  width: 750rpx;
+  height: 350rpx;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx;
+}
+
+.menu image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.process {
+  padding: 90rpx 0;
+  display: flex;
+  justify-content: center;
+}
+
+.processDetail {
+  display: flex;
+  flex-direction: row;
+  margin: 40rpx 0;
+}
+
+.imgProcess {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 36rpx;
+}
+
+.textProcess {
+  display: flex;
+  flex-direction: column;
+}
+
+.textStep {
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.textDetail {
+  font-size: 14px;
+  color: gray;
+}
+
+.singleorder {
+  width: 85%;
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.callNumber {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #cecece;
+  padding-bottom: 20rpx;
+}
+
+.callNumber image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 200rpx;
+}
+
+.myOrderText {
+  display: flex;
+  flex-direction: column;
+}
+
+.myOrderText text {
+  margin-top: 20rpx;
+}
+
+.orderstatus-contsiner {
+  display: flex;
+  justify-content: flex-end;
+}
+

@@ -1,0 +1,59 @@
+/* 宽度写死 没注释等问题 */
+
+.box {
+  font-size: 16px;
+}
+
+.box-v {
+  padding: 30rpx;
+  background-color: white;
+}
+
+.contacts {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.single {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 26rpx 0;
+}
+
+.single input {
+  flex: 1;
+  margin-left: 20rpx;
+  border-bottom: 1rpx #c9c9c9 solid;
+}
+
+.category {
+  margin: 20rpx 0;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.detail_input {
+  height: 200rpx;
+  width: 625rpx;
+  font-size: 28rpx;
+  padding: 5rpx;
+  text-align: left;
+}
+
+.picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  height: 50rpx;
+  width: 50rpx;
+}

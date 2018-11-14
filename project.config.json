@@ -1,0 +1,86 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.2",
+	"appid": "wx980241e91fb10fbb",
+	"projectname": "dyyz",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 6,
+			"list": [
+				{
+					"id": 0,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "申请表单",
+					"pathName": "pages/apply_form/apply_form",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "验证",
+					"pathName": "pages/verify/verify",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评价",
+					"pathName": "pages/comment/comment",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评价",
+					"pathName": "pages/all_order/all_order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "志愿者接单",
+					"pathName": "pages/volunteer_order/volunteer_order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/user_order/user_order",
+					"query": ""
+				}
+			]
+		}
+	}
+}

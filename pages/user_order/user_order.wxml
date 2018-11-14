@@ -1,0 +1,21 @@
+<view>
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <view class='singleorder'>
+      <view class="singleorder-text">
+        <text>下单时间：{{item.created}}</text>
+        <text>义诊类别：{{item.category_name}}</text>
+        <text>备注信息：{{item.dedescription?item.dedescription:'无'}}</text>
+      </view>
+       <view class='orderstatus' wx:if="{{item.status==0}}">
+        <text>待接单 </text>
+      </view>
+      <view class='orderstatus' wx:if="{{item.status==1}}">
+        <text>已接单 </text>
+        <text bindtap="onCommentTap" data-order_id='{{item.id}}' class='small-btn'>详情</text>
+      </view>
+      <view class='orderstatus' wx:if="{{item.status==2}}">
+         <text>已评价</text>
+      </view>
+    </view>
+  </block>
+</view>
