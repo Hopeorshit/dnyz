@@ -18,7 +18,22 @@ class Index extends Base {
     };
     this.request(params);
   }
-
+  /**
+   * 志愿者接单
+   */
+  orderTake(order_id,callBack){
+    var params = {
+      url: 'order/take',
+      sCallBack: function (res) {
+        callBack && callBack(res);
+      },
+      method: 'POST',
+      data: {
+        order_id:order_id,
+      }
+    };
+    this.request(params);
+  }
 }
 export {
   Index

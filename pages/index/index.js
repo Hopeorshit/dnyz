@@ -28,17 +28,17 @@ Page({
         init_vol: is_vol
       })
       if (is_vol) {
-        this._orderUnTokenHttp(()=>{
-          app.globalData.indexRefresh=false;
+        this._orderUnTokenHttp(() => {
+          app.globalData.indexRefresh = false;
         });
       }
     }
   },
-  
+
   /**
-   * 
+   * 下拉刷新
    */
-  onPullDownRefresh:function(){
+  onPullDownRefresh: function() {
     this._orderUnTokenHttp();
   },
 
@@ -80,7 +80,9 @@ Page({
     }
   },
 
-  //我的订单按钮
+  /**
+   * 我的订单相关按钮
+   */
   onMyTap: function(event) {
     if (!this.data.is_vol) {
       wx.navigateTo({
@@ -93,11 +95,37 @@ Page({
     }
   },
 
-  //申请服务按钮
+  /**
+   * 申请服务按钮
+   */
   onApplyTab: function(event) {
     wx.navigateTo({
       url: '../apply_form/apply_form',
     })
+  },
+
+  /**
+   * 接单按钮
+   */
+  onTakeOrder: function(event) {
+    let order_id = event.currentTarget.dataset.order_id;
+    index.orderTake(order_id, (res) => {
+      if (res.code !== 201) {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none'
+        })
+      } else {
+        wx.showToast({
+          title: '接单成功',
+        })
+      }
+      let that=this;
+      setTimeout(function() {
+        that._orderUnTokenHttp();
+      },1500)
+    })
   }
+
 
 })

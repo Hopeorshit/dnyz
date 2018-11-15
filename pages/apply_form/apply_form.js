@@ -30,9 +30,14 @@ Page({
     let value=event.detail.value;
     if (this._checkSubmit(value)){
      apply_form.orderPlace(value,(res)=>{
-       wx.redirectTo({
-         url: '/pages/user_order/user_order',
+       wx.showToast({
+         title: '提交成功',
        })
+       setTimeout(function(){
+         wx.redirectTo({
+           url: '/pages/user_order/user_order',
+         })
+       },1500);
      })
     }
   },

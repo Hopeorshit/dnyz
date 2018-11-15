@@ -4,7 +4,7 @@
       <view class="singleorder-text">
         <text>下单时间：{{item.created}}</text>
         <text>义诊类别：{{item.category_name}}</text>
-        <text>备注信息：{{item.dedescription?item.dedescription:'无'}}</text>
+        <text>备注信息：{{item.description?item.description:'无'}}</text>
       </view>
        <view class='orderstatus' wx:if="{{item.status==0}}">
         <text>待接单 </text>

@@ -53,7 +53,7 @@
         <text>备注：{{item.description?item.description:'无'}}</text>
       </view>
       <view class='orderstatus-contsiner'>
-        <view class='small-btn' bindtap='onMyOrder'>接单</view>
+        <view class='small-btn' bindtap='onTakeOrder' data-order_id='{{item.id}}' >接单</view>
       </view>
     </view>
   </block>
