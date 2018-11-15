@@ -66,7 +66,9 @@ Page({
         wx.showLoading({
           title: '切换中'
         })
+        let that=this;
         setTimeout(function() {
+          that._orderUnTokenHttp();
           wx.showToast({
             title: '您已成功切换至志愿者身份',
             icon: 'none'
