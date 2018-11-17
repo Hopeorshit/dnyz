@@ -11,13 +11,13 @@ class Token {
     this.verifyUrl = Config.restUrl + 'token/verify',
     this.tokenUrl = Config.restUrl + 'token/get' 
   }
-  verify() {
+  verify(callBack) {
     var token = wx.getStorageSync('token');
     if (!token) {
-      this.getTokenFromServer();
+      this.getTokenFromServer(callBack);
     }
     else {
-      this.verifyFromServer();
+      this.verifyFromServer(callBack);
     }
   }
   getTokenFromServer(callBack) {
@@ -39,13 +39,13 @@ class Token {
             console.log(res.data)
             let is_vol = res.data.data.user.is_vol;
             wx.setStorageSync('is_vol', is_vol);
-            callBack && callBack(res.data.token);
+            callBack && callBack(res.data.data);
           }
         })
       }
     })
   }
-  verifyFromServer(token) {
+  verifyFromServer(callBack) {
     var that = this;
     wx.request({
       url: that.verifyUrl,
@@ -56,8 +56,9 @@ class Token {
       method: 'GET',
       success: function (res) { 
         if (res.data.data.is_expired){
-         that.getTokenFromServer();
+          that.getTokenFromServer(callBack);
         }
+        callBack && callBack()
       },
     })
   }

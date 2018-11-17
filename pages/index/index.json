@@ -2,6 +2,9 @@
   "navigationBarTitleText": "电脑义诊",
   "enablePullDownRefresh": true,
   "usingComponents": {
-    "wz-call": "/components/call"
+    "wz-call": "/components/call/call",
+    "wz-loading":"/components/load/loading/loading",
+    "wz-nothing":"/components/nothing/nothing",
+    "wz-first_load":"/components/load/first_load/first_load"
   }
 }

@@ -9,9 +9,9 @@ class Index extends Base {
   /*
    获取所有订单
   */
-  orderUnToken(callBack) {
+  orderUnToken(page,page_size,callBack) {
     var params = {
-      url: 'order/un_token',
+      url: 'order/un_token?page='+page+'&page_size='+page_size,
       sCallBack: function(res) {
         callBack && callBack(res);
       },

@@ -1,6 +1,6 @@
 {
     "navigationBarTitleText": "评价",
     "usingComponents": {
-      "wz-call": "/components/call"
+      "wz-call": "/components/call/call"
     }
 }

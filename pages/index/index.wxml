@@ -1,60 +1,74 @@
 <!-- 这个页面的整体化思维 有待改进 -->
-<view class="banner">
-  <image class='bannerImg' src='../../images/banner_index.jpg'></image>
-  <view class='menu'>
-    <image class='orderImg' src="../../images/icons/message.png" bindtap='onMyTap'></image>
-    <image class="changeImg" src="../../images/icons/change.png" bindtap='onChangeTap'></image>
+<view wx:if="{{!first_load}}" >
+  <view class="banner">
+    <image class='bannerImg' src='../../images/banner_index.jpg'></image>
+    <view class='menu'>
+      <image class='orderImg' src="../../images/icons/message.png" bindtap='onMyTap'></image>
+      <image class="changeImg" src="../../images/icons/change.png" bindtap='onChangeTap'></image>
+    </view>
   </view>
-</view>
 
-<view wx:if="{{!is_vol}}">
-  <view class="process">
-    <view>
-      <view class='processDetail'>
-        <image class='imgProcess' src='/images/icons/step1.png'></image>
-        <view class="textProcess">
-          <text class="textStep">STEP 01</text>
-          <text class="textDetail">填写表单，申请服务</text>
+  <view wx:if="{{!is_vol}}">
+    <view class="process">
+      <view>
+        <view class='processDetail'>
+          <image class='imgProcess' src='/images/icons/step1.png'></image>
+          <view class="textProcess">
+            <text class="textStep">STEP 01</text>
+            <text class="textDetail">填写表单，申请服务</text>
+          </view>
         </view>
-      </view>
-      <view class='processDetail'>
-        <image class='imgProcess' src='/images/icons/step2.png'></image>
-        <view class="textProcess">
-          <text class="textStep">STEP 02</text>
-          <text class="textDetail">等待认证志愿者接单</text>
+        <view class='processDetail'>
+          <image class='imgProcess' src='/images/icons/step2.png'></image>
+          <view class="textProcess">
+            <text class="textStep">STEP 02</text>
+            <text class="textDetail">等待认证志愿者接单</text>
+          </view>
         </view>
-      </view>
-      <view class='processDetail'>
-        <image class='imgProcess' src='/images/icons/step3.png'></image>
-        <view class="textProcess">
-          <text class="textStep">STEP 03</text>
-          <text class="textDetail">志愿者到宿舍维修电脑</text>
+        <view class='processDetail'>
+          <image class='imgProcess' src='/images/icons/step3.png'></image>
+          <view class="textProcess">
+            <text class="textStep">STEP 03</text>
+            <text class="textDetail">志愿者到宿舍维修电脑</text>
+          </view>
         </view>
       </view>
     </view>
+    <button class="main-btn" bindtap='onApplyTab'>
+      立即申请
+    </button>
   </view>
-  <button class="main-btn" bindtap='onApplyTab'>
-    立即申请
-  </button>
+
+  <view wx:else>
+    <view class='content'>
+      <block wx:for="{{content.list}}" wx:key="{{index}}">
+        <view class='singleorder'>
+          <view class="callNumber">
+            <text>手机号：{{item.phone}}</text>
+            <wz-call phone='{{item.phone}}'></wz-call>
+          </view>
+          <view class='myOrderText'>
+            <text>姓名：{{item.name}}</text>
+            <text>住处：{{item.room}}</text>
+            <text>时间：{{item.created}}</text>
+            <text>类别：{{item.category_name}}</text>
+            <text>备注：{{item.description?item.description:'无'}}</text>
+          </view>
+          <view class='orderstatus-contsiner'>
+            <view class='small-btn' bindtap='onTakeOrder' data-order_id='{{item.id}}'>接单</view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class='loading' wx:if="{{content.empty}}">
+      <wz-nothing tip="暂无订单" />
+    </view>
+    <view wx:else>
+      <wz-loading more="{{content.more}}" />
+    </view>
+  </view>
 </view>
 
 <view wx:else>
-  <block wx:for="{{list}}" wx:key="{{index}}">
-    <view class='singleorder'>
-      <view class="callNumber">
-        <text>手机号：{{item.phone}}</text>
-        <wz-call phone='{{item.phone}}'></wz-call>
-      </view>
-      <view class='myOrderText'>
-        <text>姓名：{{item.name}}</text>
-        <text>住处：{{item.room}}</text>
-        <text>时间：{{item.created}}</text>
-        <text>类别：{{item.category_name}}</text>
-        <text>备注：{{item.description?item.description:'无'}}</text>
-      </view>
-      <view class='orderstatus-contsiner'>
-        <view class='small-btn' bindtap='onTakeOrder' data-order_id='{{item.id}}' >接单</view>
-      </view>
-    </view>
-  </block>
+  <wz-first_load />
 </view>
