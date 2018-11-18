@@ -30,7 +30,7 @@ Page({
     token.verify((res) => {
       app.globalData.is_vol = wx.getStorageSync('is_vol') == 1 ? true : false
       this.setData({
-        first_load:false
+        first_load: false
       })
       let indexRefresh = app.globalData.indexRefresh;
       if (indexRefresh) {
@@ -43,10 +43,9 @@ Page({
           wx.setNavigationBarTitle({
             title: '电脑义诊-志愿者',
           })
-          this._initData();
-          this._orderUnTokenHttp(() => {
-            app.globalData.indexRefresh = false;
-          });
+          this._initData(); //TODO 组件attached的时候可以触发
+          this._orderUnTokenHttp();
+          app.globalData.indexRefresh = false;
         }
       }
     });
@@ -68,18 +67,11 @@ Page({
   },
 
 
-  /**
-   * 下拉刷新
-   */
-  onPullDownRefresh: function() {
-    this._initData();
-    this._orderUnTokenHttp();
-  },
 
   /**
    * 获取所有没有被接的单子
    */
-  _orderUnTokenHttp: function(callBack) {
+  _orderUnTokenHttp: function() {
     this.setData({
       loading: true,
     })
@@ -91,12 +83,12 @@ Page({
       content.more = data.list.length == content.page_size ? true : false;
       content.page = content.page + 1;
       console.log(content.list)
-      content.empty = content.list.length>0 ? false : true,
+      content.empty = content.list.length > 0 ? false : true,
         this.setData({
           content: content,
           loading: false
         })
-      callBack && callBack()
+
     })
   },
 
@@ -115,7 +107,7 @@ Page({
             is_vol: !that.data.is_vol
           })
           that._initData();
-          that._orderUnTokenHttp();
+          that._orderUnTokenHttp(); //TODO 改变组件属性来触发
           wx.showToast({
             title: '您已成功切换至志愿者身份',
             icon: 'none'
@@ -124,7 +116,7 @@ Page({
             title: '电脑义诊-志愿者',
           })
         }, 1500)
-      }else{
+      } else {
         this.setData({
           is_vol: !this.data.is_vol
         })
@@ -181,7 +173,7 @@ Page({
       }
       let that = this;
       setTimeout(function() {
-        that._initData();
+        that._initData(); //TODO 改变属性来触发
         that._orderUnTokenHttp();
       }, 1500)
     })
@@ -192,9 +184,18 @@ Page({
   onReachBottom: function() {
     console.log('bottom')
     if (this.data.content.more) {
-      this._orderUnTokenHttp();
+      this._orderUnTokenHttp();//TODO 下拉刷新去触发父类可以通过 observer 来触发
     }
   },
+
+  /**
+   * 下拉刷新
+   */
+  onPullDownRefresh: function() { //TODO 下拉刷新去触发父类可以通过 observer 来触发
+    this._initData();
+    this._orderUnTokenHttp();
+  },
+
 
   /**
    * 分享该小程序
