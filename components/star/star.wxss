@@ -1,7 +1,7 @@
 .verify {
   display: flex;
   flex-direction: row;
-  margin-top: 40rpx;
+  margin:20rpx 0;
 }
 
 .verify-text {
@@ -24,10 +24,11 @@
   color: #1f3463;
 }
 
+
 .word-container {
   color: grey;
-  margin-top: 30rpx;
-  font-size: 16px;
+  margin: 20rpx 0;
+  font-size: 15px;
 }
 
 .word {

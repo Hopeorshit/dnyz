@@ -1,0 +1,12 @@
+<view class="verify">
+  <text class="verify-text">服务评价：</text>
+  <view class='stars'>
+    <block wx:for="{{countArr}}" wx:key="index">
+      <image src='./images/star_full.png'></image>
+    </block>
+  </view>
+</view>
+<view class="word-container">
+  <text>留言:</text>
+  <text class="word">{{detail}}</text>
+</view>

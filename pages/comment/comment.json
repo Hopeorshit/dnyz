@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "评价",
+    "navigationBarTitleText": "详情",
     "usingComponents": {
       "wz-call": "/components/call/call"
     }

@@ -13,7 +13,7 @@
       </view>
       <view class='single'>
         <image src='/images/icons/phone.png'></image>
-        <input type='number' name="phone" bindinput='onPhoneInput' value='{{phone}}' class='input' type='text' placeholder='请填写手机号' />
+        <input type='number' name="phone"  value='{{phone}}' class='input' type='text' placeholder='请填写手机号' />
       </view>
     </view>
     <!-- 义诊类别 -->
@@ -31,7 +31,7 @@
 
     <!-- 细节详情 -->
     <view class='detail box-v'>
-      <textarea name='description' bindinput='onDescription' value='{{description}}' class='detail_input' placeholder='请在此处简要说明电脑问题，不超过200个字哦' maxlength='200' />
+      <textarea name='description'value='{{description}}' class='detail_input' placeholder='请在此处简要说明电脑问题，不超过200个字哦' maxlength='200' />
     </view>
 
     <!-- 提交按钮 -->

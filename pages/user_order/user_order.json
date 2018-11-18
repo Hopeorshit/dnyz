@@ -1,4 +1,7 @@
 {
-    "navigationBarTitleText": "我的订单",
-    "enablePullDownRefresh":true
+  "navigationBarTitleText": "我的订单",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "wz-user_order": "/components/content/user_order/user_order"
+  }
 }

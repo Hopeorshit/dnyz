@@ -15,9 +15,9 @@
     </view>
   </block>
 </view>
-<view class='loading' wx:if="{{content.empty}}">
+<view wx:if="{{content.empty}}">
   <wz-nothing tip="暂无订单" />
 </view>
 <view wx:else>
-  <wz-loading more="{{content.more}}" />
+  <wz-loading wx:if="{{loading}}" more="{{content.more}}" />
 </view>

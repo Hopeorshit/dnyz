@@ -1,41 +1,26 @@
 // pages/volunteer_order/volunteer_order.js
 import {
-  Volunteer_order
-} from '../../model/volunteer_order.js'
-let volunteer_order = new Volunteer_order();
+  randomStr
+} from '../../utils/util.js'
 
 Page({
-
-  data: {
-
+  /**
+   * 上拉加载更多
+   */
+  onReachBottom: function() {
+    console.log('上拉刷新');
+    this.setData({
+      load_more: randomStr(16)
+    })
   },
-  onLoad: function(options) {
-    this._orderVolHttp();
-  },
-
   /**
    * 下拉刷新
    */
-  onPullDownRefresh: function () {
-    this._orderVolHttp();
-  },
-  
-  /**
-   * http
-   */
-  _orderVolHttp: function() {
-    volunteer_order.orderVol((res) => {
-      this.setData({
-        list: res.data.orders
-      })
+  onPullDownRefresh: function() { 
+    console.log('下拉刷新')
+    this.setData({
+      init: randomStr(16)
     })
   },
 
-
-  //打电话
-  onCallTap: function(event) {
-    wx.makePhoneCall({
-      phoneNumber: '14777310721',
-    })
-  }
 })
