@@ -1,5 +1,5 @@
 <!-- 这个页面的整体化思维 有待改进 -->
-<view wx:if="{{!first_load}}" >
+<view wx:if="{{!first_load}}">
   <view class="banner">
     <image class='bannerImg' src='../../images/banner_index.jpg'></image>
     <view class='menu'>
@@ -38,24 +38,18 @@
       立即申请
     </button>
   </view>
-
   <view wx:else>
     <view class='content'>
       <block wx:for="{{content.list}}" wx:key="{{index}}">
-        <view class='singleorder'>
-          <view class="callNumber">
-            <text>手机号：{{item.phone}}</text>
-            <wz-call phone='{{item.phone}}'></wz-call>
-          </view>
-          <view class='myOrderText'>
-            <text>姓名：{{item.name}}</text>
-            <text>住处：{{item.room}}</text>
-            <text>时间：{{item.created}}</text>
-            <text>类别：{{item.category_name}}</text>
-            <text>备注：{{item.description?item.description:'无'}}</text>
-          </view>
-          <view class='orderstatus-contsiner'>
-            <view class='small-btn' bindtap='onTakeOrder' data-order_id='{{item.id}}'>接单</view>
+        <view class='box'>
+          <view class='box-v'>
+            <view class='take-v'>
+              <view>住处：{{item.room}}</view>
+              <view class='small-btn' bindtap='onTakeOrder' data-order_id='{{item.id}}'>接单</view>
+            </view>
+            <view>时间：{{item.created}}</view>
+            <view>类别：{{item.category_name}}</view>
+            <view>备注：{{item.description?item.description:'无'}}</view>
           </view>
         </view>
       </block>
@@ -66,7 +60,7 @@
     <view wx:else>
       <wz-loading more="{{content.more}}" />
     </view>
-  </view>
+  </view> 
 </view>
 
 <view wx:else>

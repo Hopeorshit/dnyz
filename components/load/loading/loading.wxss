@@ -1,22 +1,7 @@
 /* components/load/loading/loading.wxss */
-page{
-  height: 100%;
-}
-.first-load{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .nomore{
-  color: #a9aaac;
-  font-size: 22rpx;
-  line-height: 22px;
+  color: #a9aaac
 }
 
 .loading_box {
@@ -59,50 +44,5 @@ page{
   100% {
     -webkit-transform: rotate3d(0, 0, 1, 360deg);
     transform: rotate3d(0, 0, 1, 360deg);
-  }
-}
-
-.loading3 {
-  width: 20rpx;
-  height: 20rpx;
-  background: #ff6263;
-  border-radius: 50%;
-  margin-left: 15rpx;
-}
-
-.loading3_1 {
-  -webkit-animation: loading3 1s linear infinite alternate;
-  animation: loading3 1s linear infinite alternate;
-}
-
-.loading3_2 {
-  -webkit-animation: loading3 1s linear infinite alternate;
-  animation: loading3 1s linear infinite alternate;
-  animation-delay: 0.5s;
-}
-
-.loading3_3 {
-  -webkit-animation: loading3 1s linear infinite alternate;
-  animation: loading3 1s linear infinite alternate;
-  animation-delay: 1s;
-}
-
-@-webkit-keyframes loading3 {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(0);
-  }
-}
-
-@keyframes loading3 {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(0);
   }
 }

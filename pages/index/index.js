@@ -40,6 +40,9 @@ Page({
           init_vol: is_vol
         })
         if (is_vol) {
+          wx.setNavigationBarTitle({
+            title: '电脑义诊-志愿者',
+          })
           this._initData();
           this._orderUnTokenHttp(() => {
             app.globalData.indexRefresh = false;
@@ -87,7 +90,8 @@ Page({
       content.list = contentList.concat(data.list);
       content.more = data.list.length == content.page_size ? true : false;
       content.page = content.page + 1;
-      content.empty = !content.list ? false : true,
+      console.log(content.list)
+      content.empty = content.list.length>0 ? false : true,
         this.setData({
           content: content,
           loading: false
@@ -101,22 +105,32 @@ Page({
    */
   onChangeTap: function(event) {
     if (this.data.init_vol) {
-      this.setData({
-        is_vol: !this.data.is_vol
-      })
-      if (this.data.is_vol) {
+      if (!this.data.is_vol) {
         wx.showLoading({
           title: '切换中'
         })
         let that = this;
         setTimeout(function() {
+          that.setData({
+            is_vol: !that.data.is_vol
+          })
           that._initData();
           that._orderUnTokenHttp();
           wx.showToast({
             title: '您已成功切换至志愿者身份',
             icon: 'none'
           })
+          wx.setNavigationBarTitle({
+            title: '电脑义诊-志愿者',
+          })
         }, 1500)
+      }else{
+        this.setData({
+          is_vol: !this.data.is_vol
+        })
+        wx.setNavigationBarTitle({
+          title: '电脑义诊',
+        })
       }
     } else {
       wx.navigateTo({
@@ -167,7 +181,7 @@ Page({
       }
       let that = this;
       setTimeout(function() {
-        this._initData();
+        that._initData();
         that._orderUnTokenHttp();
       }, 1500)
     })
