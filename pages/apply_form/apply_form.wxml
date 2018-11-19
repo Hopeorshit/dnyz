@@ -5,15 +5,18 @@
     <view class='contacts box-v'>
       <view class='single'>
         <image src='/images/icons/login.png'></image>
-        <input name='name' value='{{name}}' class='input' type='text' placeholder='请填写姓名' />
-      </view>
-      <view class='single'>
-        <image src='/images/icons/room.png'></image>
-        <input name="room" value='{{room}}' class='input' type='text' placeholder='请填写楼栋和房间号' />
+        <input name='name' value='{{name}}' class='input' type='text' 
+        placeholder-class='placeholder'  placeholder='请填写姓名 (只有接单志愿者可以看的到)' />
       </view>
       <view class='single'>
         <image src='/images/icons/phone.png'></image>
-        <input type='number' name="phone"  value='{{phone}}' class='input' type='text' placeholder='请填写手机号' />
+        <input type='number' name="phone" value='{{phone}}' class='input' type='text'
+         placeholder-class='placeholder' placeholder='请填写手机号 (只有接单志愿者可以看的到)' />
+      </view>
+      <view class='single'>
+        <image src='/images/icons/room.png'></image>
+        <input name="room" value='{{room}}' class='input' type='text' 
+       placeholder-class='placeholder'  placeholder='请填写楼栋和房间号' />
       </view>
     </view>
     <!-- 义诊类别 -->
@@ -31,11 +34,11 @@
 
     <!-- 细节详情 -->
     <view class='detail box-v'>
-      <textarea name='description'value='{{description}}' class='detail_input' placeholder='请在此处简要说明电脑问题，不超过200个字哦' maxlength='200' />
+      <textarea name='description' value='{{description}}' class='detail_input' placeholder='请在此处简要说明电脑问题，不超过200个字哦' maxlength='200' />
     </view>
 
     <!-- 提交按钮 -->
-    <button class='main-btn' form-type='submit' style="margin-top:150rpx">
+    <button class='main-btn' form-type='submit' disabled='{{submiting}}' style="margin-top:150rpx">
       提交
     </button>
 

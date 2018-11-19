@@ -6,9 +6,9 @@ let index = new Index();
 import {
   Token
 } from '../../utils/token.js';
-import{
+import {
   randomStr
-}from '../../utils/util.js'
+} from '../../utils/util.js'
 let app = getApp();
 Page({
 
@@ -21,20 +21,25 @@ Page({
     first_load: true, //第一次加载
   },
 
+  /**
+   * 经测试发现：打开转发的微信小程序会重新执行onLoad
+   * 但App.globalData 会保持上一个状态
+   */
   onLoad: function() {
-
+    app.globalData.indexRefresh = true;
   },
-
+  
 
   onShow: function() {
-    let token = new Token();
-    token.verify((res) => {
-      app.globalData.is_vol = wx.getStorageSync('is_vol') == 1 ? true : false
-      this.setData({
-        first_load: false
-      })
-      let indexRefresh = app.globalData.indexRefresh;
-      if (indexRefresh) {
+    console.log('------------onShow-------------------------');
+    let indexRefresh = app.globalData.indexRefresh;
+    if (indexRefresh) {
+      let token = new Token();
+      token.verify((res) => {
+        this.setData({
+          first_load: false //获取用户身份之后进行对应身份的显示
+        })
+        app.globalData.is_vol = wx.getStorageSync('is_vol') == 1 ? true : false//从缓存中获取用户身份
         let is_vol = app.globalData.is_vol
         this.setData({
           is_vol: is_vol,
@@ -44,10 +49,10 @@ Page({
           wx.setNavigationBarTitle({
             title: '电脑义诊-志愿者',
           })
-          app.globalData.indexRefresh = false;
         }
-      }
-    });
+        app.globalData.indexRefresh = false;
+      });
+    }
   },
   /**
    * 点击切换成志愿者
@@ -114,7 +119,7 @@ Page({
   onReachBottom: function() {
     console.log('上拉刷新');
     this.setData({
-      load_more:randomStr(16)
+      load_more: randomStr(16)
     })
   },
   /**

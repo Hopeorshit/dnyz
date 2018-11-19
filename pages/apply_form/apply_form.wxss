@@ -29,6 +29,10 @@
   border-bottom: 1rpx #c9c9c9 solid;
 }
 
+.placeholder{
+  font-size: 14px;
+}
+
 .single image{
   width: 50rpx;
   height: 50rpx;

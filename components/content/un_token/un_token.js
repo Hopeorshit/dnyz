@@ -75,6 +75,20 @@ Component({
      */
     onTakeOrder: function(event) {
       let order_id = event.currentTarget.dataset.order_id;
+      let that = this;
+      wx.showModal({
+        title: '是否确认接单',
+        content: '接单后您将看到对方的联系方式,对方评价之后才能录入工时系统哦',
+        confirmColor:'#73b3d5',
+        success: function(res) {
+          if (res.confirm) {
+            that._confirmToTake(order_id);
+          }
+        }
+      })
+    },
+
+    _confirmToTake: function (order_id) {
       this._orderTake(order_id, (res) => {
         if (res.code !== 201) {
           wx.showToast({
