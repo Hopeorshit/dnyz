@@ -66,3 +66,15 @@
   height: 50rpx;
   width: 50rpx;
 }
+
+/*
+*活动截止的提示
+*/
+.tips{
+  font-size: 14px;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

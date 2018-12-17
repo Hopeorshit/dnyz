@@ -34,13 +34,17 @@
         </view>
       </view>
     </view>
-    <button class="main-btn" bindtap='onApplyTab'>
+    <button class="main-btn" bindtap='onApplyTab' disabled='{{timesUp}}'>
       立即申请
     </button>
+    <view class='tips'>
+      <text>本学期活动已结束，感谢您的支持!</text>
+      <text>我们下学期会继续为您提供更好的服务。</text>
+    </view>
   </view>
-  
+
   <view wx:else>
-    <wz-un_token load_more="{{load_more}}" init="{{init}}"/>
+    <wz-un_token load_more="{{load_more}}" init="{{init}}" />
   </view>
 </view>
 

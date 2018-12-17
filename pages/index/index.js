@@ -19,6 +19,7 @@ Page({
     is_vol: false, //是否是志愿者,该值在切换志愿者身份的时候会变
     init_vol: false, //是否是志愿者,该值在当前页面不变,
     first_load: true, //第一次加载
+    timesUp:false,//活动时间截止，按钮是否能点击
   },
 
   /**

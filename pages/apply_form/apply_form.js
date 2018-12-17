@@ -5,7 +5,7 @@ let apply_form = new Apply_form();
 Page({
   data: {
     category: {}, //义诊类别，
-    submiting: false //表示是否正在提交中 防止重复提交
+    submiting: true //表示是否正在提交中 防止重复提交。 TODO: 活动结束，按钮无法点击
   },
 
   onLoad: function() {
